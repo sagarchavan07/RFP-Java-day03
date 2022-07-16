@@ -6,29 +6,30 @@ public class EmployeeWageComputation {
     }
     static final int FULL_DAY_HOUR=10;
     static final int PART_TIME_HOUR=5;
-    static final int MAX_HOURS=100;
-    static final int MAX_DAYS=20;
-    static int wagePerHour;
-
 
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation");
-        EmployeeWageComputation.getEmployeeWage();
+        System.out.println("Employee Wage Computation for company1");
+        getEmployeeWage(20,20,150);
+
+        System.out.println("*********************************************\n"
+                +"Employee Wage Computation for company2");
+        getEmployeeWage(25,23,160);
     }
 
-    static void getEmployeeWage(){
+    static void getEmployeeWage(int wagePerHour,int maxWorkingDays, int maxWorkingHours){
         Attendance attendance;
         int dailyWage=0;
         int day=1;
         int totalWage=0;
         int totalWorkingHrs=0;
 
-        while (day <=MAX_DAYS && totalWorkingHrs<MAX_HOURS) {
+        while (day <= maxWorkingDays && totalWorkingHrs< maxWorkingHours) {
             attendance = checkAttendance();
 
             switch (attendance) {
                 case IS_FULL_TIME:
-                    if (totalWorkingHrs+FULL_DAY_HOUR <= MAX_HOURS) {
+                    if (totalWorkingHrs+FULL_DAY_HOUR <= maxWorkingHours) {
                         dailyWage = wagePerHour * FULL_DAY_HOUR;
                         totalWorkingHrs+=FULL_DAY_HOUR;
                     }else {
@@ -51,7 +52,7 @@ public class EmployeeWageComputation {
         System.out.println("Total Days = "+(day-1));
         System.out.println("Total Working Hours = "+totalWorkingHrs);
         System.out.println("Total Wage of month= "+totalWage);
-
+        System.out.println();
     }
     static Attendance checkAttendance(){
         int random=(int)(Math.random()*10)%3;
