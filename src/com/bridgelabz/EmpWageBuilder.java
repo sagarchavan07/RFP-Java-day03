@@ -4,16 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EmpWageBuilder implements WageBuilder{
-//    public enum Attendance{
-//        IS_FULL_TIME,IS_PART_TIME
-//    }
-
-
     public void wageBuilder(CompanyEmpWage company){
         Attendance attendance;
         int dailyWage=0;
         int day=1;
-
+        company.DailyWage=new float[company.maxWorkingDays];
 
         while (day <= company.maxWorkingDays && company.totalWorkingHrs< company.maxWorkingHours) {
             attendance = checkAttendance();
@@ -36,6 +31,7 @@ public class EmpWageBuilder implements WageBuilder{
                     break;
             }
             company.totalWage+=dailyWage;
+            company.DailyWage[(day-1)]=dailyWage;
 //            System.out.println("day "+day+" wage= "+ dailyWage);
             day++;
         }
