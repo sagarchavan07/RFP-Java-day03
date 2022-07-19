@@ -26,7 +26,7 @@ public class EmployeeWageComputationMain {
         empWageBuilder.wageBuilder(company2);
         System.out.println("Total Wage of company1= "+company2.totalWage);
 
-        System.out.println("***********************************");
+        System.out.println("*********************************************");
         for (String key: CompanyEmpWage.CompanyEmpWageList.keySet()) {
             System.out.println(CompanyEmpWage.CompanyEmpWageList.get(key).toString());;
         }
