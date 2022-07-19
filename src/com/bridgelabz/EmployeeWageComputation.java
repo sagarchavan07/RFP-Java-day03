@@ -11,7 +11,7 @@ public class EmployeeWageComputation {
         company1.maxWorkingDays=20;
         company1.maxWorkingHours=150;
 
-        EmpWageBuilder empWageBuilder=new EmpWageBuilder();
+        WageBuilder empWageBuilder=new EmpWageBuilder();
         empWageBuilder.wageBuilder(company1);
         System.out.println("Total Wage of company1= "+company1.totalWage);
 
@@ -27,8 +27,8 @@ public class EmployeeWageComputation {
         System.out.println("Total Wage of company1= "+company2.totalWage);
 
         System.out.println("***********************************");
-        for (String key: empWageBuilder.CompanyEmpWageList.keySet()) {
-            System.out.println(empWageBuilder.CompanyEmpWageList.get(key).toString());;
+        for (String key: CompanyEmpWage.CompanyEmpWageList.keySet()) {
+            System.out.println(CompanyEmpWage.CompanyEmpWageList.get(key).toString());;
         }
     }
 

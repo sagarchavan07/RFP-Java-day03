@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import java.util.HashMap;
+
 public class CompanyEmpWage {
     String companyName;
     static final int FULL_DAY_HOUR=10;
@@ -9,6 +11,7 @@ public class CompanyEmpWage {
     int maxWorkingHours;
     int totalWage;
     int totalWorkingHrs;
+    static HashMap<String,CompanyEmpWage> CompanyEmpWageList=new HashMap<>();
 
     @Override
     public String toString() {

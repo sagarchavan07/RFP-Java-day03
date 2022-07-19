@@ -3,14 +3,13 @@ package com.bridgelabz;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class EmpWageBuilder {
-    public enum Attendance{
-        IS_FULL_TIME,IS_PART_TIME
-    }
+public class EmpWageBuilder implements WageBuilder{
+//    public enum Attendance{
+//        IS_FULL_TIME,IS_PART_TIME
+//    }
 
-    HashMap<String,CompanyEmpWage> CompanyEmpWageList=new HashMap<>();
 
-    void wageBuilder(CompanyEmpWage company){
+    public void wageBuilder(CompanyEmpWage company){
         Attendance attendance;
         int dailyWage=0;
         int day=1;
@@ -40,13 +39,12 @@ public class EmpWageBuilder {
 //            System.out.println("day "+day+" wage= "+ dailyWage);
             day++;
         }
-        System.out.println();
         System.out.println("Total Days = "+(day-1));
         System.out.println("Total Working Hours = "+company.totalWorkingHrs);
 
-        CompanyEmpWageList.put(company.companyName,company);
+        company.CompanyEmpWageList.put(company.companyName,company);
     }
-    Attendance checkAttendance(){
+    public Attendance checkAttendance(){
         int random=(int)(Math.random()*10)%3;
         return (random== Attendance.IS_FULL_TIME.ordinal()) ? Attendance.IS_FULL_TIME: Attendance.IS_PART_TIME;
     }
