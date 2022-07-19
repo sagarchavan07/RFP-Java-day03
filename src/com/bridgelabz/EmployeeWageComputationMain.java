@@ -30,6 +30,9 @@ public class EmployeeWageComputationMain {
         for (String key: CompanyEmpWage.CompanyEmpWageList.keySet()) {
             System.out.println(CompanyEmpWage.CompanyEmpWageList.get(key).toString());;
         }
+        System.out.println("*********************************************");
+        System.out.println("company1 totalWage = "+empWageBuilder.getTotalWage("company1"));
+        System.out.println("company2 totalWage = "+empWageBuilder.getTotalWage("company2"));
     }
 
 }

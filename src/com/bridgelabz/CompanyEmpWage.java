@@ -28,7 +28,11 @@ public class CompanyEmpWage {
     public String toString() {
         return "CompanyEmpWage{" +
                 "companyName='" + companyName + '\'' +
+                ", wagePerHour=" + wagePerHour +
+                ", maxWorkingDays=" + maxWorkingDays +
+                ", maxWorkingHours=" + maxWorkingHours +
                 ", totalWage=" + totalWage +
+                ", totalWorkingHrs=" + totalWorkingHrs +
                 ", DailyWage=" + Arrays.toString(DailyWage) +
                 '}';
     }

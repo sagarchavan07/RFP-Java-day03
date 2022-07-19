@@ -1,8 +1,5 @@
 package com.bridgelabz;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class EmpWageBuilder implements WageBuilder{
     public void wageBuilder(CompanyEmpWage company){
         Attendance attendance;
@@ -43,5 +40,18 @@ public class EmpWageBuilder implements WageBuilder{
     public Attendance checkAttendance(){
         int random=(int)(Math.random()*10)%3;
         return (random== Attendance.IS_FULL_TIME.ordinal()) ? Attendance.IS_FULL_TIME: Attendance.IS_PART_TIME;
+    }
+
+    @Override
+    public int getTotalWage(String companyName) {
+        int totalWage=0;
+        for (String key:CompanyEmpWage.CompanyEmpWageList.keySet()) {
+            if (key.equalsIgnoreCase(companyName)){
+                totalWage=CompanyEmpWage.CompanyEmpWageList.get(key).totalWage;
+                break;
+            }
+        }
+
+        return totalWage;
     }
 }

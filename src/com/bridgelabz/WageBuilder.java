@@ -6,4 +6,5 @@ public interface WageBuilder {
     }
     void wageBuilder(CompanyEmpWage company);
     Attendance checkAttendance();
+    int getTotalWage(String companyName);
 }
